@@ -1,0 +1,10 @@
+{
+  "extends": "tsconfig-moon/tsconfig.solid.json",
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "esnext"
+    ]
+  },
+  "include": ["src/**/*"]
+}

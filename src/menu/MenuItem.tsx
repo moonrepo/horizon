@@ -1,5 +1,5 @@
-import { type JSXElement, Show } from 'solid-js';
 import { As, DropdownMenu as DM } from '@kobalte/core';
+import { type JSXElement, Show } from 'solid-js';
 import { hasElement } from '../helpers';
 import { Icon, type IconLookup } from '../icons';
 import { Text } from '../typography';

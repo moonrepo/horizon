@@ -1,5 +1,5 @@
-import { Show, splitProps } from 'solid-js';
 import { TextField } from '@kobalte/core';
+import { Show, splitProps } from 'solid-js';
 import { hasElement } from '../helpers';
 import { FieldDescription, FieldError, FieldLabel } from './Field';
 import { getError, getValidationState } from './helpers';
@@ -22,7 +22,16 @@ export function TextArea(props: TextAreaProps) {
 	const [field, native, root] = splitProps(
 		props,
 		['description', 'state', 'label'],
-		['onBlur', 'onChange', 'onInput', 'onFocus', 'maxLength', 'minLength', 'placeholder', 'rows'],
+		[
+			'onBlur',
+			'onChange',
+			'onInput',
+			'onFocus',
+			'maxLength',
+			'minLength',
+			'placeholder',
+			'rows',
+		],
 	);
 	const className = () => input({ type: 'textarea', size: 'df' });
 

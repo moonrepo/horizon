@@ -1,5 +1,5 @@
-import { type JSXElement, splitProps } from 'solid-js';
 import { As, DropdownMenu as DM } from '@kobalte/core';
+import { type JSXElement, splitProps } from 'solid-js';
 import { Icon } from '../icons';
 import { faChevronDown } from '../icons/solid';
 import { menu } from '../menu/styles';
@@ -13,7 +13,11 @@ export interface MenuButtonProps
 }
 
 export function MenuButton(props: MenuButtonProps) {
-	const [button, local, rest] = splitProps(props, ['size', 'variant'], ['children', 'label']);
+	const [button, local, rest] = splitProps(
+		props,
+		['size', 'variant'],
+		['children', 'label'],
+	);
 
 	return (
 		<DM.Root {...rest}>
@@ -34,7 +38,9 @@ export function MenuButton(props: MenuButtonProps) {
 			</DM.Trigger>
 
 			<DM.Portal>
-				<DM.Content class={menu({ class: 'mt-1 min-w-[250px]' })}>{local.children}</DM.Content>
+				<DM.Content class={menu({ class: 'mt-1 min-w-[250px]' })}>
+					{local.children}
+				</DM.Content>
 			</DM.Portal>
 		</DM.Root>
 	);

@@ -1,9 +1,9 @@
-import { splitProps } from 'solid-js';
 import { cx } from 'class-variance-authority';
+import { splitProps } from 'solid-js';
 import {
 	Heading as BaseHeading,
-	type HeadingElement,
 	type HeadingProps as BaseHeadingProps,
+	type HeadingElement,
 } from '../internal/typography/Heading';
 import { classes } from './styles';
 import type { TypographyProps } from './types';

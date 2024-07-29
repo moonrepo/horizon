@@ -1,5 +1,5 @@
-import type { JSXElement } from 'solid-js';
 import { cva } from 'class-variance-authority';
+import type { JSXElement } from 'solid-js';
 import type { StatusType } from '../types';
 import { Text } from './Text';
 

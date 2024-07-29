@@ -4,7 +4,13 @@ export type TypographyOverflow = 'clip' | 'ellipsis' | 'truncate' | 'wrap';
 
 export type TypographyTransform = 'capitalize' | 'lowercase' | 'uppercase';
 
-export type TypographyWeight = 'black' | 'bold' | 'light' | 'medium' | 'normal' | 'thin';
+export type TypographyWeight =
+	| 'black'
+	| 'bold'
+	| 'light'
+	| 'medium'
+	| 'normal'
+	| 'thin';
 
 export type TypographyVariant = 'muted';
 

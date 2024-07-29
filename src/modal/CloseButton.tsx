@@ -1,5 +1,5 @@
+import { As, type Button as BB, Dialog } from '@kobalte/core';
 import type { JSXElement } from 'solid-js';
-import { As, Button as BB, Dialog } from '@kobalte/core';
 import { Button } from '../button';
 
 export interface ModalCloseButtonProps extends BB.ButtonRootOptions {

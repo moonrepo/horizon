@@ -1,5 +1,5 @@
-import { Show, splitProps } from 'solid-js';
 import { TextField } from '@kobalte/core';
+import { Show, splitProps } from 'solid-js';
 import { hasElement } from '../helpers';
 import { FieldDescription, FieldError, FieldLabel } from './Field';
 import { getError, getValidationState } from './helpers';

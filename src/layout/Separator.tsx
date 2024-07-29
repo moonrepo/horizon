@@ -1,5 +1,5 @@
-import { cx } from 'class-variance-authority';
 import { Separator as Sep } from '@kobalte/core';
+import { cx } from 'class-variance-authority';
 
 export interface SeparatorProps extends Sep.SeparatorRootOptions {}
 

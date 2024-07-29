@@ -1,5 +1,5 @@
-import { type JSXElement, Show, splitProps } from 'solid-js';
 import { Checkbox as CB } from '@kobalte/core';
+import { type JSXElement, Show, splitProps } from 'solid-js';
 import { hasElement } from '../helpers';
 import { Icon } from '../icons/Icon';
 import { faCheck } from '../icons/solid';

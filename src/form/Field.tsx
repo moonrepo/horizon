@@ -1,5 +1,5 @@
-import type { JSXElement } from 'solid-js';
 import { cx } from 'class-variance-authority';
+import type { JSXElement } from 'solid-js';
 import { Text } from '../typography/Text';
 
 export interface FieldState<T = unknown> {
@@ -40,5 +40,9 @@ export function FieldDescription(props: FieldPartProps) {
 }
 
 export function FieldError(props: FieldPartProps) {
-	return <div class={cx('mt-1.5 dark:text-meteor-400', props.class)}>{props.children}</div>;
+	return (
+		<div class={cx('mt-1.5 dark:text-meteor-400', props.class)}>
+			{props.children}
+		</div>
+	);
 }

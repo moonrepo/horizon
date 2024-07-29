@@ -9,7 +9,10 @@ export interface HeaderProps {
 
 export function Header(props: HeaderProps) {
 	return (
-		<header class="relative p-2 border-b border-solid dark:border-space-800" id="header">
+		<header
+			class="relative p-2 border-b border-solid dark:border-space-800"
+			id="header"
+		>
 			<Container class="flex justify-start">
 				{props.logo}
 				{props.children}

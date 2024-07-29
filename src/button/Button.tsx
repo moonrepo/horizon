@@ -1,6 +1,11 @@
-import { type JSXElement, Show, splitProps, type ValidComponent } from 'solid-js';
-import { cva } from 'class-variance-authority';
 import { As, Button as BaseButton } from '@kobalte/core';
+import { cva } from 'class-variance-authority';
+import {
+	type JSXElement,
+	Show,
+	type ValidComponent,
+	splitProps,
+} from 'solid-js';
 import { hasElement } from '../helpers';
 import { Affix } from '../internal/Affix';
 import type { CommonProps } from '../types';
@@ -9,7 +14,9 @@ export type ButtonSize = 'df' | 'lg' | 'sm';
 
 export type ButtonVariant = 'danger' | 'primary' | 'secondary' | 'tertiary';
 
-export interface ButtonProps extends BaseButton.ButtonRootOptions, CommonProps<HTMLButtonElement> {
+export interface ButtonProps
+	extends BaseButton.ButtonRootOptions,
+		CommonProps<HTMLButtonElement> {
 	as?: ValidComponent;
 	after?: JSXElement;
 	before?: JSXElement;
@@ -56,7 +63,11 @@ export function Button(props: ButtonProps) {
 		['after', 'before', 'openInNewWindow'],
 	);
 	const className = () =>
-		classes({ class: styles.class, size: styles.size, variant: styles.variant });
+		classes({
+			class: styles.class,
+			size: styles.size,
+			variant: styles.variant,
+		});
 	const isLink = () => !!rest.href;
 
 	return (

@@ -24,7 +24,9 @@ export function Heading<T extends HeadingElement>(props: HeadingProps<T>) {
 
 	return (
 		<Dynamic<HeadingElement> component={elementType()} {...other}>
-			<TypographyContext.Provider value>{local.children}</TypographyContext.Provider>
+			<TypographyContext.Provider value>
+				{local.children}
+			</TypographyContext.Provider>
 		</Dynamic>
 	);
 }

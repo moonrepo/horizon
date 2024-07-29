@@ -1,6 +1,6 @@
+import { cx } from 'class-variance-authority';
 import type { JSXElement, ValidComponent } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
-import { cx } from 'class-variance-authority';
 
 export interface StackProps {
 	as?: ValidComponent;
@@ -13,7 +13,11 @@ export function Stack(props: StackProps) {
 	return (
 		<Dynamic
 			component={props.as ?? 'div'}
-			class={cx('flex flex-col', props.class, props.spacious ? 'gap-3' : 'gap-2')}
+			class={cx(
+				'flex flex-col',
+				props.class,
+				props.spacious ? 'gap-3' : 'gap-2',
+			)}
 		>
 			{props.children}
 		</Dynamic>

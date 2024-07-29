@@ -1,5 +1,5 @@
-import { createSignal, type JSXElement, Show } from 'solid-js';
 import { Popover } from '@kobalte/core';
+import { type JSXElement, Show, createSignal } from 'solid-js';
 import { Text } from '../typography';
 
 export interface TooltipProps extends Popover.PopoverRootOptions {

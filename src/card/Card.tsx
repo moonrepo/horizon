@@ -1,6 +1,6 @@
+import { cx } from 'class-variance-authority';
 import type { JSXElement, ValidComponent } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
-import { cx } from 'class-variance-authority';
 
 export interface CardProps {
 	as?: ValidComponent;

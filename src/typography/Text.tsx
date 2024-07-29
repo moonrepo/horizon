@@ -1,16 +1,18 @@
 import { splitProps } from 'solid-js';
 import {
-	type InferTextProps,
 	Text as BaseText,
-	type TextElement,
 	type TextProps as BaseTextProps,
+	type InferTextProps,
+	type TextElement,
 } from '../internal/typography/Text';
 import { classes } from './styles';
 import type { TypographyProps } from './types';
 
 export type TextSize = 'df' | 'lg' | 'sm' | 'xl' | 'xs';
 
-export interface TextProps<T extends TextElement> extends BaseTextProps<T>, TypographyProps {
+export interface TextProps<T extends TextElement>
+	extends BaseTextProps<T>,
+		TypographyProps {
 	/**
 	 * Size of body text.
 	 * @default df
@@ -18,7 +20,9 @@ export interface TextProps<T extends TextElement> extends BaseTextProps<T>, Typo
 	size?: TextSize;
 }
 
-export function Text<T extends TextElement>(props: InferTextProps<T> & TextProps<T>) {
+export function Text<T extends TextElement>(
+	props: InferTextProps<T> & TextProps<T>,
+) {
 	const [styles, rest] = splitProps(props, [
 		'align',
 		'overflow',

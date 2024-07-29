@@ -1,7 +1,7 @@
+import { As, Toast as Bread, toaster } from '@kobalte/core';
+import { cx } from 'class-variance-authority';
 import { type JSXElement, Show } from 'solid-js';
 import { Portal } from 'solid-js/web';
-import { cx } from 'class-variance-authority';
-import { As, Toast as Bread, toaster } from '@kobalte/core';
 import { IconButton } from '../icons';
 import { faClose } from '../icons/solid';
 import type { StatusType } from '../types';
@@ -42,7 +42,10 @@ export function Toast(props: ToastProps) {
 			<Bread.ProgressTrack class="h-[4px] w-full mt-1.5 rounded">
 				<Bread.ProgressFill
 					class="bg-white/50 h-full rounded"
-					style={{ width: 'var(--kb-toast-progress-fill-width)', transition: 'width 250ms linear' }}
+					style={{
+						width: 'var(--kb-toast-progress-fill-width)',
+						transition: 'width 250ms linear',
+					}}
 				/>
 			</Bread.ProgressTrack>
 		</Bread.Root>

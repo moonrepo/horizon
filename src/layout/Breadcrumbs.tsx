@@ -1,5 +1,5 @@
-import { For, Show, type ValidComponent } from 'solid-js';
 import { As, Breadcrumbs as BC } from '@kobalte/core';
+import { For, Show, type ValidComponent } from 'solid-js';
 import { Icon } from '../icons';
 import { faChevronRight } from '../icons/solid';
 import { Text } from '../typography';
@@ -22,7 +22,11 @@ export function Breadcrumbs(props: BreadcrumbsProps) {
 				<For each={props.items}>
 					{(item, i) => (
 						<li class="flex items-center gap-1">
-							<BC.Link asChild href={item.href} class={linkClasses({ variant: 'default' })}>
+							<BC.Link
+								asChild
+								href={item.href}
+								class={linkClasses({ variant: 'default' })}
+							>
 								<As component={props.as}>{item.label}</As>
 							</BC.Link>
 

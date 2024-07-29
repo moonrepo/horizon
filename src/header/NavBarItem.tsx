@@ -1,6 +1,6 @@
+import { cx } from 'class-variance-authority';
 import type { JSXElement, ValidComponent } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
-import { cx } from 'class-variance-authority';
 
 export interface NavBarItemProps {
 	as?: ValidComponent;
@@ -21,7 +21,9 @@ export function NavBarItem(props: NavBarItemProps) {
 				href={props.href}
 				class={cx(
 					'inline-block m-0 font-sans font-medium text-base py-1.5 px-1.5 sm:px-2 rounded',
-					props.isActive ? 'dark:bg-space-800 dark:hover:bg-space-700' : 'dark:hover:bg-space-800',
+					props.isActive
+						? 'dark:bg-space-800 dark:hover:bg-space-700'
+						: 'dark:hover:bg-space-800',
 				)}
 				onClick={props.onClick}
 				data-active={props.isActive}

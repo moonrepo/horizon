@@ -1,5 +1,5 @@
-import { Show, splitProps } from 'solid-js';
 import { As, type AsChildProp, Select as Sel } from '@kobalte/core';
+import { Show, splitProps } from 'solid-js';
 import { hasElement } from '../helpers';
 import { Icon } from '../icons/Icon';
 import { faCaretDown } from '../icons/solid';
@@ -78,7 +78,9 @@ export function Select(props: SelectProps) {
 
 							<Show when={hasElement(option, 'description')}>
 								<Text size="sm" variant="muted">
-									<Sel.ItemDescription>{option.description}</Sel.ItemDescription>
+									<Sel.ItemDescription>
+										{option.description}
+									</Sel.ItemDescription>
 								</Text>
 							</Show>
 						</As>
@@ -107,7 +109,9 @@ export function Select(props: SelectProps) {
 			</Show>
 
 			<Sel.Trigger class={className()} disabled={root.disabled}>
-				<Sel.Value<Option>>{(data) => <span>{data.selectedOption()?.label}</span>}</Sel.Value>
+				<Sel.Value<Option>>
+					{(data) => <span>{data.selectedOption()?.label}</span>}
+				</Sel.Value>
 
 				<Sel.Icon class="ml-1 grow-0">
 					<Icon icon={faCaretDown} />

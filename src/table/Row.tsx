@@ -1,5 +1,5 @@
-import type { JSXElement } from 'solid-js';
 import { cx } from 'class-variance-authority';
+import type { JSXElement } from 'solid-js';
 
 export interface RowProps {
 	children: JSXElement;

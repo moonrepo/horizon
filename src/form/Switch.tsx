@@ -1,5 +1,5 @@
-import { type JSXElement, Show, splitProps } from 'solid-js';
 import { Switch as SW } from '@kobalte/core';
+import { type JSXElement, Show, splitProps } from 'solid-js';
 import { hasElement } from '../helpers';
 import { FieldDescription, FieldError } from './Field';
 import { getError, getValidationState } from './helpers';

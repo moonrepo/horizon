@@ -1,5 +1,5 @@
-import { type JSXElement, Show, splitProps } from 'solid-js';
 import { RadioGroup as RG } from '@kobalte/core';
+import { type JSXElement, Show, splitProps } from 'solid-js';
 import { hasElement } from '../helpers';
 import { Icon } from '../icons/Icon';
 import { faCircleSmall } from '../icons/solid';
@@ -38,7 +38,12 @@ export interface RadioGroupProps
 }
 
 export function RadioGroup(props: RadioGroupProps) {
-	const [field, rest] = splitProps(props, ['children', 'description', 'state', 'label']);
+	const [field, rest] = splitProps(props, [
+		'children',
+		'description',
+		'state',
+		'label',
+	]);
 
 	return (
 		<RG.Root

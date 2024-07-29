@@ -1,6 +1,6 @@
-import { type JSXElement, Show, splitProps } from 'solid-js';
-import { cx } from 'class-variance-authority';
 import { As, Dialog } from '@kobalte/core';
+import { cx } from 'class-variance-authority';
+import { type JSXElement, Show, splitProps } from 'solid-js';
 import { hasElement } from '../helpers';
 import { IconButton } from '../icons';
 import { faClose } from '../icons/solid';
@@ -35,7 +35,10 @@ export function Modal(props: ModalProps) {
 				<div class="fixed inset-0 z-30 flex justify-center items-center p-2 overflow-auto">
 					<Dialog.Content class="dark:bg-space-800 rounded-lg p-2 w-full max-w-xl md:p-4">
 						<header
-							class={cx('flex justify-between items-start', hasDescription() ? 'mb-2' : 'mb-4')}
+							class={cx(
+								'flex justify-between items-start',
+								hasDescription() ? 'mb-2' : 'mb-4',
+							)}
 						>
 							<Heading level={6}>
 								<Dialog.Title>{local.title}</Dialog.Title>
@@ -47,7 +50,9 @@ export function Modal(props: ModalProps) {
 						</header>
 
 						<Show when={hasDescription()}>
-							<Dialog.Description class="mb-4">{local.description}</Dialog.Description>
+							<Dialog.Description class="mb-4">
+								{local.description}
+							</Dialog.Description>
 						</Show>
 
 						<div>{rest.children}</div>

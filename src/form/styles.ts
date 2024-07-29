@@ -19,7 +19,9 @@ export const input = cva(
 	{
 		variants: {
 			disabled: {
-				false: ['dark:ui-expanded:text-rock-50 dark:ui-expanded:border-moon-500'],
+				false: [
+					'dark:ui-expanded:text-rock-50 dark:ui-expanded:border-moon-500',
+				],
 			},
 			size: {
 				sm: 'text-sm p-1 rounded',
@@ -27,8 +29,10 @@ export const input = cva(
 				lg: 'text-lg px-3 py-2 rounded-lg',
 			},
 			type: {
-				checkbox: 'text-lg p-0 w-4 h-4 inline-flex justify-center items-center grow-0 rounded',
-				radio: 'text-lg p-0 w-4 h-4 inline-flex justify-center items-center grow-0 rounded-full',
+				checkbox:
+					'text-lg p-0 w-4 h-4 inline-flex justify-center items-center grow-0 rounded',
+				radio:
+					'text-lg p-0 w-4 h-4 inline-flex justify-center items-center grow-0 rounded-full',
 				input: 'w-full',
 				select: 'w-full justify-between',
 				switch:

@@ -1,12 +1,19 @@
-import { type JSXElement, Show, splitProps, type ValidComponent } from 'solid-js';
-import { cva } from 'class-variance-authority';
 import { As, Link as BaseLink } from '@kobalte/core';
+import { cva } from 'class-variance-authority';
+import {
+	type JSXElement,
+	Show,
+	type ValidComponent,
+	splitProps,
+} from 'solid-js';
 import { hasElement } from '../helpers';
 import { Affix } from '../internal/Affix';
 import type { CommonProps } from '../types';
 import type { TypographyVariant } from './types';
 
-export interface LinkProps extends BaseLink.LinkRootOptions, CommonProps<HTMLAnchorElement> {
+export interface LinkProps
+	extends BaseLink.LinkRootOptions,
+		CommonProps<HTMLAnchorElement> {
 	after?: JSXElement;
 	as?: ValidComponent;
 	before?: JSXElement;

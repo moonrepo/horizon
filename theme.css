@@ -24,17 +24,6 @@ html {
 	}
 }
 
-.body {
-	background-color: theme('colors.white');
-	color: theme('colors.fg.light');
-	padding: 0;
-}
-
-.dark {
-	background-color: #000e19;
-	color: theme('colors.fg.dark');
-}
-
 .inherit-parent {
 	font-family: inherit;
 	font-size: inherit;

@@ -27,6 +27,7 @@
     "@biomejs/biome": "^1.8.3",
     "@storybook/addon-essentials": "^8.2.6",
     "@storybook/docs-tools": "^8.2.6",
+    "@tailwindcss/typography": "^0.5.13",
     "daisyui": "^4.12.10",
     "solid-js": "^1.8.15",
     "storybook": "^8.2.6",

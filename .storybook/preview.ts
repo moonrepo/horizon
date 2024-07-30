@@ -1,3 +1,6 @@
+import '../fonts.css';
+import '../theme.css';
+
 const preview = {
 	parameters: {
 		controls: {

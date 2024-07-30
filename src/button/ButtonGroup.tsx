@@ -1,5 +1,5 @@
-import { cx } from 'class-variance-authority';
 import type { JSXElement } from 'solid-js';
+import { Group } from '../layout/Group';
 
 export interface ButtonGroupProps {
 	children: JSXElement;
@@ -8,11 +8,8 @@ export interface ButtonGroupProps {
 
 export function ButtonGroup(props: ButtonGroupProps) {
 	return (
-		<div
-			class={cx('inline-flex', props.compact ? 'gap-1' : 'gap-2')}
-			role="group"
-		>
+		<Group inline compact={props.compact} role="group">
 			{props.children}
-		</div>
+		</Group>
 	);
 }

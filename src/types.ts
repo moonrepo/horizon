@@ -4,7 +4,10 @@ export type AriaProps = JSX.AriaAttributes;
 
 export interface CommonProps<T>
 	extends AriaProps,
-		Omit<JSX.DOMAttributes<T>, 'children'> {
+		Omit<
+			JSX.DOMAttributes<T>,
+			'children' | 'innerHTML' | 'innerText' | 'textContent'
+		> {
 	id?: string;
 	tabIndex?: number | string;
 }

@@ -1,44 +1,38 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
+import { Button } from '../src/button/Button';
+import { Group } from '../src/layout/Group';
 
-import { Button } from './Button';
-
-// More on how to set up stories at: https://storybook.js.org/docs/7.0/solid/writing-stories/introduction
 const meta = {
-	title: 'Example/Button',
 	component: Button,
+	title: 'button/Button',
 	tags: ['autodocs'],
-	argTypes: {
-		backgroundColor: { control: 'color' },
-	},
 } satisfies Meta<typeof Button>;
 
-export default meta;
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/7.0/solid/writing-stories/args
-export const Primary: Story = {
-	args: {
-		primary: true,
-		label: 'Button',
+export const Sizes: Story = {
+	render() {
+		return (
+			<Group>
+				<Button size="sm">Small</Button>
+				<Button size="md">Medium (default)</Button>
+				<Button size="lg">Large</Button>
+			</Group>
+		);
 	},
 };
 
-export const Secondary: Story = {
-	args: {
-		label: 'Button',
+export const Variants: Story = {
+	render() {
+		return (
+			<Group>
+				<Button variant="primary">Primary (default)</Button>
+				<Button variant="secondary">Secondary</Button>
+				<Button variant="tertiary">Tertiary</Button>
+				<Button variant="danger">Danger</Button>
+			</Group>
+		);
 	},
 };
 
-export const Large: Story = {
-	args: {
-		size: 'large',
-		label: 'Button',
-	},
-};
-
-export const Small: Story = {
-	args: {
-		size: 'small',
-		label: 'Button',
-	},
-};
+export default meta;

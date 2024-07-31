@@ -1,14 +1,14 @@
 import type { JSXElement } from 'solid-js';
-import { Group } from '../layout/Group';
+import { type Gap, Group } from '../layout/Group';
 
 export interface ButtonGroupProps {
 	children: JSXElement;
-	compact?: boolean;
+	gap?: Gap;
 }
 
 export function ButtonGroup(props: ButtonGroupProps) {
 	return (
-		<Group inline compact={props.compact} role="group">
+		<Group inline gap={props.gap ?? 'sm'} role="group">
 			{props.children}
 		</Group>
 	);

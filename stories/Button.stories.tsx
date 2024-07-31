@@ -15,8 +15,19 @@ export const Sizes: Story = {
 		return (
 			<Group>
 				<Button size="sm">Small</Button>
-				<Button size="md">Medium (default)</Button>
+				<Button size="md">Medium</Button>
 				<Button size="lg">Large</Button>
+			</Group>
+		);
+	},
+};
+
+export const Types: Story = {
+	render() {
+		return (
+			<Group>
+				<Button>Button</Button>
+				<Button href="#">Link</Button>
 			</Group>
 		);
 	},
@@ -26,7 +37,7 @@ export const Variants: Story = {
 	render() {
 		return (
 			<Group>
-				<Button variant="primary">Primary (default)</Button>
+				<Button variant="primary">Primary</Button>
 				<Button variant="secondary">Secondary</Button>
 				<Button variant="tertiary">Tertiary</Button>
 				<Button variant="danger">Danger</Button>

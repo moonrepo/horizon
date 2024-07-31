@@ -2,7 +2,13 @@
   "name": "@moonrepo/horizon",
   "version": "0.0.1",
   "description": "Our component library and design system, powered by Solid and Tailwind.",
-  "keywords": ["moonrepo", "moon", "repo", "solid", "ui"],
+  "keywords": [
+    "moonrepo",
+    "moon",
+    "repo",
+    "solid",
+    "ui"
+  ],
   "author": "moon",
   "license": "MIT",
   "repository": "https://github.com/moonrepo/moon",
@@ -20,6 +26,7 @@
     "solid-js": "^1.6.0"
   },
   "dependencies": {
+    "@iconify-icon/solid": "^2.1.1",
     "@kobalte/core": "^0.12.1",
     "class-variance-authority": "^0.7.0"
   },

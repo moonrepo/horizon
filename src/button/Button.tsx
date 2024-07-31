@@ -28,7 +28,7 @@ export interface ButtonProps
 	openInNewWindow?: boolean;
 }
 
-const classes = cva('btn', {
+const makeClass = cva('btn', {
 	variants: {
 		size: {
 			sm: 'btn-sm',
@@ -49,16 +49,16 @@ const classes = cva('btn', {
 });
 
 export function Button(props: ButtonProps) {
-	const [styles, local, rest] = splitProps(
+	const [ui, local, rest] = splitProps(
 		props,
 		['class', 'size', 'variant'],
 		['after', 'before', 'openInNewWindow'],
 	);
 	const className = () =>
-		classes({
-			class: styles.class,
-			size: styles.size,
-			variant: styles.variant,
+		makeClass({
+			class: ui.class,
+			size: ui.size,
+			variant: ui.variant,
 		});
 	const isLink = () => !!rest.href;
 

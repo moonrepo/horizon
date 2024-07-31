@@ -24,8 +24,8 @@ export function Group(props: GroupProps) {
 			class={cx(
 				ui.inline ? 'inline-flex' : 'flex',
 				'flex-row items-center',
-				ui.class,
 				GAP_CLASS[ui.gap ?? 'md'],
+				ui.class,
 			)}
 		>
 			{rest.children}

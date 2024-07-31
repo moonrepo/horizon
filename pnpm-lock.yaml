@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@iconify-icon/solid':
+    specifier: ^2.1.1
+    version: 2.1.1(solid-js@1.8.19)
   '@kobalte/core':
     specifier: ^0.12.1
     version: 0.12.6(solid-js@1.8.19)
@@ -1723,6 +1726,19 @@ packages:
 
   /@floating-ui/utils@0.2.5:
     resolution: {integrity: sha512-sTcG+QZ6fdEUObICavU+aB3Mp8HY4n14wYHdxK4fXjPmv3PXZZeY5RaguJmGyeH/CJQhX3fqKUtS4qc1LoHwhQ==}
+    dev: false
+
+  /@iconify-icon/solid@2.1.1(solid-js@1.8.19):
+    resolution: {integrity: sha512-1X7nt336uhilWO0iFPf5CCvYBgneiHaX2Fq254JPG9jasDW8/cXd2ZZbtmvSz7xra+Ve3uIn15n7f/8X6USmLg==}
+    peerDependencies:
+      solid-js: '>=1'
+    dependencies:
+      iconify-icon: 2.1.0
+      solid-js: 1.8.19
+    dev: false
+
+  /@iconify/types@2.0.0:
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
     dev: false
 
   /@internationalized/date@3.5.5:
@@ -3617,6 +3633,12 @@ packages:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
     dev: true
+
+  /iconify-icon@2.1.0:
+    resolution: {integrity: sha512-lto4XU3bwTQnb+D/CsJ4dWAo0aDe+uPMxEtxyOodw9l7R9QnJUUab3GCehlw2M8mDHdeUu/ufx8PvRQiJphhXg==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
 
   /iconv-lite@0.4.24:
     resolution: {integrity: sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA==}

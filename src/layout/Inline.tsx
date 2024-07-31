@@ -9,6 +9,7 @@ export interface InlineProps {
 	spacious?: boolean;
 }
 
+/** @deprecated */
 export function Inline(props: InlineProps) {
 	return (
 		<Dynamic

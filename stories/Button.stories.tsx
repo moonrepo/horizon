@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
 import { Button } from '../src/button/Button';
+import { Icon } from '../src/icons';
 import { Group } from '../src/layout/Group';
 
 const meta = {
@@ -9,6 +10,25 @@ const meta = {
 } satisfies Meta<typeof Button>;
 
 type Story = StoryObj<typeof meta>;
+
+export const Icons: Story = {
+	render() {
+		return (
+			<Group>
+				<Button before={<Icon icon="ph:plus-circle-duotone" />}>Before</Button>
+				<Button after={<Icon icon="ph:minus-circle-duotone" />} size="md">
+					After
+				</Button>
+				<Button
+					after={<Icon icon="ph:minus-circle-duotone" />}
+					before={<Icon icon="ph:plus-circle-duotone" />}
+				>
+					Both
+				</Button>
+			</Group>
+		);
+	},
+};
 
 export const Sizes: Story = {
 	render() {

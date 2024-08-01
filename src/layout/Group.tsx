@@ -15,20 +15,26 @@ export interface GroupProps extends AriaProps {
 }
 
 export function Group(props: GroupProps) {
-	const [ui, rest] = splitProps(props, ['class', 'gap', 'inline']);
+	const [api, rest] = splitProps(props, [
+		'as',
+		'children',
+		'class',
+		'gap',
+		'inline',
+	]);
 
 	return (
 		<Dynamic
 			{...rest}
-			component={rest.as ?? 'div'}
+			component={api.as ?? 'div'}
 			class={cx(
-				ui.inline ? 'inline-flex' : 'flex',
+				api.inline ? 'inline-flex' : 'flex',
 				'flex-row items-center',
-				GAP_CLASS[ui.gap ?? 'md'],
-				ui.class,
+				GAP_CLASS[api.gap ?? 'md'],
+				api.class,
 			)}
 		>
-			{rest.children}
+			{api.children}
 		</Dynamic>
 	);
 }

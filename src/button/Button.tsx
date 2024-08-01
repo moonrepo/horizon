@@ -16,16 +16,16 @@ export type ButtonVariant = 'danger' | 'primary' | 'secondary' | 'tertiary';
 export interface ButtonProps
 	extends BaseButton.ButtonRootOptions,
 		CommonProps<HTMLButtonElement> {
-	as?: ValidComponent;
 	after?: JSXElement;
+	as?: ValidComponent;
 	before?: JSXElement;
 	children: JSXElement;
 	class?: string;
 	href?: string;
+	openInNewWindow?: boolean;
 	size?: ButtonSize;
 	type?: 'button' | 'reset' | 'submit';
 	variant?: ButtonVariant;
-	openInNewWindow?: boolean;
 }
 
 const makeClass = cva('btn', {
@@ -49,23 +49,30 @@ const makeClass = cva('btn', {
 });
 
 export function Button(props: ButtonProps) {
-	const [ui, local, rest] = splitProps(
-		props,
-		['class', 'size', 'variant'],
-		['after', 'before', 'openInNewWindow'],
-	);
+	const [api, rest] = splitProps(props, [
+		'after',
+		'as',
+		'before',
+		'children',
+		'class',
+		'href',
+		'openInNewWindow',
+		'size',
+		'type',
+		'variant',
+	]);
 	const className = () =>
 		makeClass({
-			class: ui.class,
-			size: ui.size,
-			variant: ui.variant,
+			class: api.class,
+			size: api.size,
+			variant: api.variant,
 		});
-	const isLink = () => !!rest.href;
+	const isLink = () => !!api.href;
 
 	return (
 		<BaseButton.Root
 			{...(isLink() &&
-				local.openInNewWindow && {
+				api.openInNewWindow && {
 					rel: 'noopener noreferrer',
 					target: '_blank',
 				})}
@@ -73,15 +80,15 @@ export function Button(props: ButtonProps) {
 			asChild
 			class={className()}
 		>
-			<As component={rest.as ?? (isLink() ? 'a' : 'button')}>
-				<Show when={local.before}>
-					<Affix type="prefix">{local.before}</Affix>
+			<As component={api.as ?? (isLink() ? 'a' : 'button')}>
+				<Show when={api.before}>
+					<Affix type="prefix">{api.before}</Affix>
 				</Show>
 
-				<span>{rest.children}</span>
+				<span>{api.children}</span>
 
-				<Show when={local.after}>
-					<Affix type="suffix">{local.after}</Affix>
+				<Show when={api.after}>
+					<Affix type="suffix">{api.after}</Affix>
 				</Show>
 			</As>
 		</BaseButton.Root>

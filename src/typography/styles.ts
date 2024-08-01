@@ -1,6 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-export const classes = cva('m-0 p-0 font-sans', {
+export const makeClass = cva('m-0 p-0 font-sans', {
 	variants: {
 		align: {
 			center: 'text-center',
@@ -25,7 +25,7 @@ export const classes = cva('m-0 p-0 font-sans', {
 		size: {
 			xs: 'text-xs',
 			sm: 'text-sm',
-			df: '',
+			md: '',
 			lg: 'text-lg',
 			xl: 'text-xl',
 		},

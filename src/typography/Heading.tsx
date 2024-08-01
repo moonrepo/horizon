@@ -1,11 +1,10 @@
-import { cx } from 'class-variance-authority';
 import { splitProps } from 'solid-js';
 import {
 	Heading as BaseHeading,
 	type HeadingProps as BaseHeadingProps,
 	type HeadingElement,
 } from '../internal/typography/Heading';
-import { classes } from './styles';
+import { makeClass } from './styles';
 import type { TypographyProps } from './types';
 
 export interface HeadingProps<T extends HeadingElement>
@@ -13,26 +12,27 @@ export interface HeadingProps<T extends HeadingElement>
 		Omit<TypographyProps, 'weight'> {}
 
 export function Heading<T extends HeadingElement>(props: HeadingProps<T>) {
-	const [styles, local, rest] = splitProps(
-		props,
-		['align', 'level', 'overflow', 'transform', 'variant'],
-		['class'],
-	);
+	const [ui, rest] = splitProps(props, [
+		'class',
+		'align',
+		'level',
+		'overflow',
+		'transform',
+		'variant',
+	]);
 	const className = () =>
-		cx(
-			classes({
-				align: styles.align,
-				level: styles.level,
-				overflow: styles.overflow,
-				transform: styles.transform,
-				variant: styles.variant,
-			}),
-			local.class,
-		);
+		makeClass({
+			class: ui.class,
+			align: ui.align,
+			level: ui.level,
+			overflow: ui.overflow,
+			transform: ui.transform,
+			variant: ui.variant,
+		});
 
 	return (
-		<BaseHeading {...rest} class={className()} level={styles.level}>
-			{props.children}
+		<BaseHeading {...rest} class={className()} level={ui.level}>
+			{rest.children}
 		</BaseHeading>
 	);
 }

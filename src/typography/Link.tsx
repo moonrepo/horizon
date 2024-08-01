@@ -6,7 +6,6 @@ import {
 	type ValidComponent,
 	splitProps,
 } from 'solid-js';
-import { hasElement } from '../helpers';
 import { Affix } from '../internal/Affix';
 import type { CommonProps } from '../types';
 import type { TypographyVariant } from './types';
@@ -23,7 +22,7 @@ export interface LinkProps
 	openInNewWindow?: boolean;
 }
 
-export const classes = cva('m-0 p-0 inline-flex', {
+export const makeClass = cva('m-0 p-0 inline-flex', {
 	variants: {
 		variant: {
 			default: 'dark:text-moon-300 dark:hover:text-moon-200',
@@ -34,12 +33,12 @@ export const classes = cva('m-0 p-0 inline-flex', {
 });
 
 export function Link(props: LinkProps) {
-	const [styles, local, rest] = splitProps(
+	const [ui, local, rest] = splitProps(
 		props,
 		['variant'],
 		['as', 'after', 'before', 'openInNewWindow'],
 	);
-	const className = () => classes({ variant: styles.variant ?? 'default' });
+	const className = () => makeClass({ variant: ui.variant ?? 'default' });
 	const isButton = () => !rest.href && !!rest.onClick;
 
 	return (
@@ -55,13 +54,13 @@ export function Link(props: LinkProps) {
 			class={className()}
 		>
 			<As component={(local.as as 'a') ?? (isButton() ? 'button' : 'a')}>
-				<Show when={hasElement(local, 'before')}>
+				<Show when={local.before}>
 					<Affix type="prefix">{local.before}</Affix>
 				</Show>
 
 				<span>{props.children}</span>
 
-				<Show when={hasElement(local, 'after')}>
+				<Show when={local.after}>
 					<Affix type="suffix">{local.after}</Affix>
 				</Show>
 			</As>

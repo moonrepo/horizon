@@ -14,15 +14,15 @@ export interface StackProps extends AriaProps {
 }
 
 export function Stack(props: StackProps) {
-	const [ui, rest] = splitProps(props, ['class', 'gap']);
+	const [api, rest] = splitProps(props, ['as', 'children', 'class', 'gap']);
 
 	return (
 		<Dynamic
 			{...rest}
-			component={rest.as ?? 'div'}
-			class={cx('flex flex-col', GAP_CLASS[ui.gap ?? 'md'], ui.class)}
+			component={api.as ?? 'div'}
+			class={cx('flex flex-col', GAP_CLASS[api.gap ?? 'md'], api.class)}
 		>
-			{rest.children}
+			{api.children}
 		</Dynamic>
 	);
 }

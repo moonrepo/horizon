@@ -1,11 +1,7 @@
 import { type JSX, splitProps } from 'solid-js';
 import { Dynamic } from 'solid-js/web';
+import type { CommonProps } from '../../types';
 import { TypographyContext } from './context';
-
-export type InferTextProps<T extends TextElement> =
-	T extends keyof JSX.IntrinsicElements
-		? JSX.IntrinsicElements[T]
-		: JSX.IntrinsicElements['span'];
 
 export type TextElement =
 	| 'abbr'
@@ -38,24 +34,25 @@ export type TextElement =
 	| 'var'
 	| 'wbr';
 
-export interface TextProps<T extends TextElement> {
+export type InferTextHtmlElement<T extends TextElement> =
+	JSX.IntrinsicElements[T];
+
+export interface TextProps<T extends TextElement>
+	extends CommonProps<InferTextHtmlElement<T>> {
 	as?: T;
 	children: JSX.Element;
+	class?: string;
 }
 
-export function Text<T extends TextElement>(
-	props: InferTextProps<T> & TextProps<T>,
-) {
-	const [local, other] = splitProps(props, ['as', 'children']);
-	const elementType = () => local.as ?? ('span' as T);
+export function Text<T extends TextElement>(props: TextProps<T>) {
+	const [api, rest] = splitProps(props, ['as', 'children']);
+	const elementType = () => api.as ?? ('span' as T);
 
 	return (
-		<Dynamic<TextElement>
-			component={elementType()}
-			{...(other as unknown as TextProps<T>)}
-		>
+		// @ts-expect-error Polymorphism
+		<Dynamic<TextElement> component={elementType()} {...rest}>
 			<TypographyContext.Provider value>
-				{local.children}
+				{api.children}
 			</TypographyContext.Provider>
 		</Dynamic>
 	);
